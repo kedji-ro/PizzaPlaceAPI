@@ -46,9 +46,9 @@ app.MapGet("/categories", async (PizzaPlaceDb db) =>
     await db.Categories.ToListAsync());
 
 app.MapGet("/categories/{id}", async (int id, PizzaPlaceDb db) =>
-    await db.OrderDetails.FindAsync(id)
-        is OrderDetails orderDetail
-            ? Results.Ok(orderDetail)
+    await db.Categories.FindAsync(id)
+        is Category category
+            ? Results.Ok(category)
             : Results.NotFound());
 
 app.MapGet("/sizes", async (PizzaPlaceDb db) =>
