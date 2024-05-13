@@ -46,5 +46,34 @@ namespace PizzaPlaceAPI.Controllers
 
             return Ok(await dbContext.Orders.ToListAsync());
         }
+
+        [HttpPut]
+        public async Task<ActionResult<List<Orders>>> PutOrder(int id)
+        {
+            var order = await dbContext.Orders.FindAsync(id);
+
+            if (order is null)
+            {
+                return NotFound("Order not found.");
+            }
+
+            order.DateTime = DateTime.UtcNow;
+            await dbContext.SaveChangesAsync();
+
+            return Ok(order);
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult<List<Orders>>> DeleteOrder(int id)
+        {
+            if (await dbContext.Orders.FindAsync(id) is Orders order)
+            {
+                dbContext.Orders.Remove(order);
+                await dbContext.SaveChangesAsync();
+                return Ok(await dbContext.Orders.ToListAsync());
+            }
+
+            return NotFound();
+        }
     }
 }
