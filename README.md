@@ -6,9 +6,9 @@ This is an ASP.NET REST API application which the sole purpose is for practice a
 
 **Configuring database and string connection**
 
-**STEP 1** Make sure to create database named "PizzaPlace" in you local SQL Server
-**STEP 2** Open appsettings.json
-**STEP 3** Replace "DefaultConnection" with your local connection string
+**STEP 1** Make sure to create database named "PizzaPlace" in you local SQL Server <br>
+**STEP 2** Open appsettings.json <br>
+**STEP 3** Replace "DefaultConnection" with your local connection string <br>
 
 **String value guide**
 - Data Source = Local SQL Sever instance 
@@ -18,8 +18,8 @@ This is an ASP.NET REST API application which the sole purpose is for practice a
 - TrustServerCertificate = true/false (optional)
 	*Set this to true if you can't initialize DB context or retrieve data when local SQL server connection encryption is enabled.*
 
-**STEP 4** Open Package Manager console
-**STEP 5** Type "update-database" and hit ENTER. This will create the entities in your local **PizzaPlace** db
+**STEP 4** Open Package Manager console <br>
+**STEP 5** Type "update-database" and hit ENTER. This will create the entities in your local **PizzaPlace** db <br>
 
 That's it! You should be able to run the app on your machine with those steps. You can utilize Swagger UI too for testing the HTTP methods.
 
