@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public int TypeId { get; set; }
-        public string Size { get; set; }
+        public int SizeId { get; set; }
         public decimal Price { get; set; }
     }
 }
